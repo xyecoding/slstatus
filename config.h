@@ -65,15 +65,15 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
     /* function format          argument */
-    {disk_free, "h %s | ", "/home"},
-    {disk_free, "r %s | ", "/"},
     {cpu_perc, "C %s%% | ", NULL},
     {ram_perc, "R %s%% | ", NULL},
-    {run_command, " %s | ", "uname -r | awk -F \"-\" '{ print $1 }'"},
     {run_command, " %s | ",
      "amixer sget Master | awk -F \"[][]\" '{ print $2 }' | grep -v '^$'"},
     {run_command, " %s | ",
      "amixer sget Capture | awk -F \"[][]\" '/Left:/ { print $2 }' | grep -v "
      "'^$'"},
+    {disk_free, "h %s | ", "/home"},
+    {disk_free, "r %s | ", "/"},
+    {run_command, " %s | ", "uname -r | awk -F \"-\" '{ print $1 }'"},
     {datetime, "%s", "%F %R %A"},
 };
